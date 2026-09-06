@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Completer Web - اكمل المهام تلقائياً</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🎮</span>
+                    <h1>Quest Completer</h1>
+                    <p>v2.0 Web Version</p>
+                </div>
+                <div class="status-badge" id="statusBadge">
+                    <span class="status-dot"></span>
+                    جاهز للعمل
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Login Section -->
+            <section id="loginSection" class="section active">
+                <div class="card">
+                    <h2>🔗 ربط توكن Discord</h2>
+                    <p class="section-description">يرجى إدخال توكن حسابك على Discord للبدء</p>
+                    
+                    <form id="linkForm" class="form">
+                        <div class="form-group">
+                            <label for="userIdInput">معرّف المستخدم (User ID):</label>
+                            <input 
+                                type="text" 
+                                id="userIdInput" 
+                                placeholder="أدخل معرّفك (أو ترك فارغ للاستخدام الافتراضي)"
+                                class="input-field"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tokenInput">توكن Discord:</label>
+                            <textarea 
+                                id="tokenInput" 
+                                placeholder="الصق توكن Discord الخاص بك هنا..."
+                                class="input-field textarea"
+                                rows="4"
+                            ></textarea>
+                            <small class="hint">💡 احصل على التوكن من DevTools → Console في متصفح Discord</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            🔗 ربط التوكن
+                        </button>
+                    </form>
+
+                    <div class="info-box">
+                        <h4>📝 كيفية الحصول على التوكن:</h4>
+                        <ol>
+                            <li>افتح Discord في المتصفح</li>
+                            <li>اضغط F12 لفتح Developer Tools</li>
+                            <li>اذهب إلى Console</li>
+                            <li>ألصق: <code>document.body.appendChild(document.createElement('iframe')).contentWindow.localStorage.token</code></li>
+                            <li>انسخ التوكن وألصقه هنا</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section id="dashboardSection" class="section">
+                <div class="dashboard-header">
+                    <div>
+                        <h2>🎮 لوحة التحكم</h2>
+                        <p id="accountInfo" class="account-info">جاري التحميل...</p>
+                    </div>
+                    <button id="unlinkBtn" class="btn btn-secondary">
+                        🔓 فصل التوكن
+                    </button>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button id="checkTokenBtn" class="action-btn">
+                        <span class="icon">✅</span>
+                        <span>التحقق من التوكن</span>
+                    </button>
+                    <button id="listQuestsBtn" class="action-btn">
+                        <span class="icon">📋</span>
+                        <span>عرض المهام</span>
+                    </button>
+                    <button id="completeQuestBtn" class="action-btn">
+                        <span class="icon">🎯</span>
+                        <span>إكمال مهمة واحدة</span>
+                    </button>
+                    <button id="completeAllBtn" class="action-btn">
+                        <span class="icon">⚡</span>
+                        <span>إكمال جميع المهام</span>
+                    </button>
+                </div>
+
+                <!-- Quests List -->
+                <div class="card">
+                    <h3>📋 المهام المتاحة</h3>
+                    <div id="questsList" class="quests-grid">
+                        <div class="loading">جاري تحميل المهام...</div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div id="resultsSection" class="results-hidden">
+                    <div class="card">
+                        <h3>📊 نتائج العملية</h3>
+                        <div id="resultsContainer" class="results-container"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Notification Toast -->
+        <div id="toastContainer" class="toast-container"></div>
+
+        <!-- Loading Modal -->
+        <div id="loadingModal" class="loading-modal hidden">
+            <div class="spinner"></div>
+            <p id="loadingText">جاري المعالجة...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
