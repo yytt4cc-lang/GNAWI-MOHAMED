@@ -1,53 +1,185 @@
-# Quest Completer V1
+# 🎮 Quest Completer - Discord Bot & Web Version
 
-A Discord.js bot to manage and complete quests automatically.
+تطبيق متكامل لإكمال مهام Discord تلقائياً! متوفر بنسختين:
+- 🤖 **نسخة البوت** (Discord Bot v1.0)
+- 🌐 **نسخة الويب** (Web Version v2.0) ← **الجديدة!**
 
-## Features / Commands
+---
 
-| Command | Description |
-|---|---|
-| `/link` | Link your account so the bot can track and complete quests for you |
-| `/quest` | Complete a single specific quest |
-| `/questall` | Complete all available quests at once |
-| `/autoquest` | Enable automatic quest completion in the background |
+## 🚀 اختر النسخة المناسبة:
 
-## Environment Variables
+### 🌐 **[النسخة الويب (Web Version) - موصى به]** ✨
 
-| Variable | Required | Description |
-|---|---|---|
-| `DISCORD_TOKEN` | Yes | Your bot's token from the Developer Portal |
-| `DISCORD_CLIENT_ID` | Yes | Your application's client ID |
-| `BOT_PREFIX` | No | Prefix for text commands (default: `,,`) |
+الفرع: **`web-version`**
 
-Create a `.env` file in the root directory:
+#### ✅ المميزات:
+- 🎨 واجهة ويب حديثة وسهلة الاستخدام
+- 📱 متجاوبة (تعمل على الهاتف والكمبيوتر)
+- 🔗 ربط آمن للتوكن
+- 📋 عرض تفصيلي للمهام
+- ⚡ إكمال مهام واحدة أو جميعها
+- 💾 حفظ السجل في قاعدة بيانات
+- 🌐 يمكن نشره على خوادم (Railway, Heroku, إلخ)
 
-```env
-DISCORD_TOKEN=your_bot_token_here
-DISCORD_CLIENT_ID=your_application_id_here
-BOT_PREFIX=,,
-```
-
-## Installation
-
+#### 🚀 البدء السريع:
 ```bash
+git checkout web-version
 npm install
+npm start
 ```
+**الموقع:** http://localhost:3000
 
-Then start the bot:
+**📖 التوثيق الكامل:** اقرأ [`README_WEB.md`](./README_WEB.md)
 
+---
+
+### 🤖 **[نسخة البوت الأصلية (v1.0)]**
+
+الفرع: **`main`** أو **`master`**
+
+#### ✅ المميزات:
+- 🎯 بوت Discord مباشر
+- ⚡ أوامر Slash سريعة
+- 🔄 أوامر بادئة (Prefix Commands)
+- 🤖 تشغيل تلقائي في الخلفية
+
+#### 📋 الأوامر:
+
+| الأمر | الوصف |
+|-------|-------|
+| `/link` | ربط حسابك لتتبع المهام |
+| `/quest` | إكمال مهمة واحدة |
+| `/questall` | إكمال جميع المهام |
+| `/autoquest` | تشغيل الإكمال التلقائي |
+
+#### 🚀 البدء السريع:
 ```bash
+git checkout main
+npm install
 node index.js
 ```
 
-## Notes
+---
 
-- Make sure your bot has the required Gateway Intents enabled from the Discord Developer Portal.
-- Slash commands may take a few minutes to register/update globally.
+## 🌍 اختيار النسخة:
 
-## Support
+### **للمبتدئين:** 🌐 Web Version
+```bash
+git checkout web-version
+```
+- أسهل في الاستخدام
+- لا تحتاج معرفة بالبرمجة
+- واجهة رسومية جميلة
 
-- **Support Server:** [dsc.gg/synoraxdev](https://dsc.gg/synoraxdev)
-- **Developer:** KiT2|.ggnoobies - Customised Developer { its2yashpatel_ } (Synora 乂 Development)
+### **للمتقدمين:** 🤖 Bot Version
+```bash
+git checkout main
+```
+- تكامل مباشر مع Discord
+- تشغيل 24/7 على سيرفر
+- تحكم متقدم
 
-- **Support Server:** [dsc.gg/synoraxdev](https://dsc.gg/synoraxdev)
-- **Developer:** KiT2|.ggnoobies { its2yashpatel_ } (Synora 乂 Development)
+---
+
+## ⚙️ الم��طلبات:
+
+- **Node.js** >= 20.0.0
+- **npm** أو **yarn**
+- توكن Discord
+
+---
+
+## 📚 التوثيق:
+
+### النسخة الويب:
+- 📖 [`README_WEB.md`](./README_WEB.md) - الشرح الكامل
+- 📊 [`COMPLETION_SUMMARY.md`](./COMPLETION_SUMMARY.md) - ملخص الإنجاز
+- 🔧 [`.env.example`](./.env.example) - قالب الإعدادات
+
+### النسخة الأصلية:
+- الأوامر أعلاه
+
+---
+
+## 🔐 أمان التوكن:
+
+⚠️ **تنبيهات مهمة:**
+1. ✅ لا تشارك التوكن الخاص بك
+2. ✅ استخدم فقط على جهازك الشخصي
+3. ✅ احم ملف `.env` - لا تضعه على GitHub
+4. ✅ التوكن محفوظ محلياً فقط (في النسخة الويب)
+
+---
+
+## 🚀 النشر على الإنترنت:
+
+### النسخة الويب على Railway:
+
+```
+1. اذهب إلى: railway.app
+2. اختر: "Deploy from GitHub"
+3. اختر الفرع: web-version
+4. اضغط: Deploy
+```
+
+الموقع سيكون جاهز في دقايق! 🎉
+
+---
+
+## 💬 الدعم:
+
+- **خادم الدعم:** [dsc.gg/synoraxdev](https://dsc.gg/synoraxdev)
+- **المطور الأصلي:** KiT2|.ggnoobies - Synora 乂 Development
+- **تحديث الويب:** Customized for Web Platform
+
+---
+
+## 📜 الترخيص:
+
+MIT License - مفتوح المصدر
+
+---
+
+## 📊 الحالة:
+
+| النسخة | الحالة | آخر تحديث |
+|--------|--------|----------|
+| 🌐 Web v2.0 | ✅ متاح | 2026-09-06 |
+| 🤖 Bot v1.0 | ✅ متاح | سابق |
+
+---
+
+## 🎯 الخطوات التالية:
+
+### النسخة الويب:
+- 🤖 Auto-Quest (إكمال تلقائي)
+- 📊 لوحة إحصائيات
+- 🔔 إشعارات
+- 👥 دعم مستخدمين متعددين
+
+### النسخة الأصلية:
+- 🔄 تحسينات الأداء
+- 🌍 دعم لغات إضافية
+
+---
+
+## ⭐ اختر النسخة الآن:
+
+### 🌐 تريد واجهة ويب سهلة؟
+```bash
+git checkout web-version
+npm install && npm start
+# اذهب إلى: http://localhost:3000
+```
+
+### 🤖 تريد بوت Discord مباشر؟
+```bash
+git checkout main
+npm install
+# أضف توكن في .env
+node index.js
+```
+
+---
+
+**استمتع بإكمال مهام Discord بسهولة!** 🚀
